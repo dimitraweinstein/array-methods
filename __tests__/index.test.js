@@ -36,9 +36,9 @@ describe('map an array return another', () => {
 describe('filter an array', () => {
   it('should return filtered array of truthy values', () => {
 
-    const arr = [ , 1, 2, 3, 4, 5];
-    const callback = (item) => item <= arr.length;
-    const expected = [false, true, true, true, true, true];
+    const arr = ['cat', 'dog', 'mouse'];
+    const callback = (item) => item.startsWith('c');
+    const expected = ['cat'];
     const actual = filterArray(arr, callback);
 
     expect(actual).toEqual(expected);
