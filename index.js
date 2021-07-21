@@ -27,15 +27,16 @@ export const mapArray = (arr, callback) => {
   return newArray;
 };
 
-export const filterArray = (arr, callback) => {
-  const newArray = [];
 
+export const filterArray = (arr, callback) => {
+  let newArray = [];
+    
   for (let i = 0; i < arr.length; i++) {
     const item = arr[i];
-    newArray[i] = callback(item);
-
+      
+    if (callback(item)) {
+      newArray = [...newArray, item];
+    }
+    return newArray;
   }
-  return newArray;
 };
-
-
