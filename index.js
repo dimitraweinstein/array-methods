@@ -6,6 +6,10 @@ export const mapArray = (arr, callback) => {
     desiredResult = [...desiredResult, callback(arr[i])];
     // console.log('im in the loop', desiredResult);
   }
+//   if (desiredResult ===  undefined) {
+//     return ' ';
+//   }
+
   return desiredResult;
 
 

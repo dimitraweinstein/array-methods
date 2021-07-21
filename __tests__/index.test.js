@@ -20,5 +20,25 @@ describe('map an array return another', () => {
 
     expect(actual).toEqual(expected);
   });
+    
+  it('should return "map" over original array and return a new array of same length and values', () => {
+
+    const arr = ['Tom', '', 'hi'];
+    const callback = (item) => item + '!';
+    const expected = ['Tom!', '!', 'hi!'];
+    const actual = mapArray(arr, callback);
+
+    expect(actual).toEqual(expected);
+  });
+    
+//      it('should return "map" over original array and return a new array of same length and values', () => {
+
+//     const arr = ['holes', 'in', 'my', 'array'];
+//     const callback = (item) => item  + '!';
+//     const expected = ['holes', , 'in', 'my', ,'array'];
+//     const actual = mapArray(arr, callback);
+
+//     expect(actual).toEqual(expected);
+//   });
 
 });
