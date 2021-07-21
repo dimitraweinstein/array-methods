@@ -1,17 +1,41 @@
-export const mapArray = (arr, callback) => {
+// export const mapArray = (arr, callback) => {
     
-  let desiredResult = [];
+//   let desiredResult = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let finalResult;
+//     if (arr[i]) {
+//       finalResult = callback(arr[i]);
+//     } else {
+//       finalResult = '';
+//     }
+//     desiredResult = [...desiredResult, finalResult];
+//   }
+//   return desiredResult;
+
+// };
+
+
+export const mapArray = (arr, callback) => {
+  const newArray = [];
 
   for (let i = 0; i < arr.length; i++) {
-    let finalResult;
-    if (arr[i]) {
-      finalResult = callback(arr[i]);
-    } else {
-      finalResult = '';
-    }
-    desiredResult = [...desiredResult, finalResult];
-  }
-  return desiredResult;
+    const item = arr[i];
+    newArray[i] = callback(item);
 
-};   
+  }
+  return newArray;
+};
+
+export const filterArray = (arr, callback) => {
+  const newArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const item = arr[i];
+    newArray[i] = callback(item);
+
+  }
+  return newArray;
+};
+
 
