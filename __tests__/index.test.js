@@ -1,11 +1,11 @@
-import { mapArray } from '../index.js';
+import { filterArray, mapArray } from '../index.js';
 
 describe('map an array return another', () => {
   it('should return "map" over original array and return a new array of same length and values', () => {
 
-      const arr = [1, 2, 3, 4, 5, '', ''];
+    const arr = [1, 2, 3, 4, 5];
     const callback = (item) => item * 2;
-    const expected = [2, 4, 6, 8, 10, '', ''];
+    const expected = [2, 4, 6, 8, 10];
     const actual = mapArray(arr, callback);
 
     expect(actual).toEqual(expected);
@@ -13,9 +13,9 @@ describe('map an array return another', () => {
     
   it('should return "map" over original array and return a new array of same length and values', () => {
 
-    const arr = ['Tom', 'hi', ''];
+    const arr = ['Tom', 'hi'];
     const callback = (item) => item.toUpperCase();
-    const expected = ['TOM', 'HI', ''];
+    const expected = ['TOM', 'HI'];
     const actual = mapArray(arr, callback);
 
     expect(actual).toEqual(expected);
@@ -25,8 +25,21 @@ describe('map an array return another', () => {
 
     const arr = ['pant', '', 'shoe'];
     const callback = (item) => item + 's!';
-    const expected = ['pants!', '', 'shoes!'];
+    const expected = ['pants!', 's!', 'shoes!'];
     const actual = mapArray(arr, callback);
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+
+describe('filter an array', () => {
+  it('should return filtered array of truthy values', () => {
+
+    const arr = [ , 1, 2, 3, 4, 5];
+    const callback = (item) => item <= arr.length;
+    const expected = [false, true, true, true, true, true];
+    const actual = filterArray(arr, callback);
 
     expect(actual).toEqual(expected);
   });
