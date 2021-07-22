@@ -44,21 +44,29 @@ describe('filter an array', () => {
     expect(actual).toEqual(expected);
   });
     
-  //   it('should return an array of words that end with d', () => {
+  it('should return an array of words that end with d', () => {
 
-  //     const arr = ['cat', 'dog', 'mouse'];
-  //     const callback = (item) => item.startsWith('c');
-  //     const expected = ['cat'];
-  //     const actual = filterArray(arr, callback);
+    const arr = ['kind', 'rind', 'blind', 'apple', 'dumb'];
+    const callback = (item) => item.endsWith('d');
+    const expected = ['kind', 'rind', 'blind'];
+    const actual = filterArray(arr, callback);
 
-  //     expect(actual).toEqual(expected);
-  //   });
+    expect(actual).toEqual(expected);
+  });
     
   it('should return an array of even numbers', () => {
     const arr = [2, 4, 5, 13, 8];
-      const callback = (item) => item % 2 === 0;
-    // const callback = (item) => item > 10;
+    const callback = (item) => item % 2 === 0;
     const expected = [2, 4, 8];
+    const actual = filterArray(arr, callback);
+
+    expect(actual).toEqual(expected);
+  });
+    
+  it('should return an array of numbers less than or equal to 10', () => {
+    const arr = [2, 4, 5, 8, 10];
+    const callback = (item) => item <= 10;
+    const expected = [2, 4, 5, 8, 10];
     const actual = filterArray(arr, callback);
 
     expect(actual).toEqual(expected);
