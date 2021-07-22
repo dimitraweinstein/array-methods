@@ -34,11 +34,31 @@ describe('map an array return another', () => {
 
 
 describe('filter an array', () => {
-  it('should return filtered array of truthy values', () => {
+  it('should return an array of c-words', () => {
 
-    const arr = ['cat', 'dog', 'mouse'];
+    const arr = ['cat', 'dog', 'cartwheel', 'mouse'];
     const callback = (item) => item.startsWith('c');
-    const expected = ['cat'];
+    const expected = ['cat', 'cartwheel'];
+    const actual = filterArray(arr, callback);
+
+    expect(actual).toEqual(expected);
+  });
+    
+  //   it('should return an array of words that end with d', () => {
+
+  //     const arr = ['cat', 'dog', 'mouse'];
+  //     const callback = (item) => item.startsWith('c');
+  //     const expected = ['cat'];
+  //     const actual = filterArray(arr, callback);
+
+  //     expect(actual).toEqual(expected);
+  //   });
+    
+  it('should return an array of even numbers', () => {
+    const arr = [2, 4, 5, 13, 8];
+      const callback = (item) => item % 2 === 0;
+    // const callback = (item) => item > 10;
+    const expected = [2, 4, 8];
     const actual = filterArray(arr, callback);
 
     expect(actual).toEqual(expected);

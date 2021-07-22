@@ -33,10 +33,11 @@ export const filterArray = (arr, callback) => {
     
   for (let i = 0; i < arr.length; i++) {
     const item = arr[i];
-      
-    if (callback(item)) {
+
+    const result = callback(item);
+    if (result) {
       newArray = [...newArray, item];
     }
-    return newArray;
   }
+  return newArray;
 };
