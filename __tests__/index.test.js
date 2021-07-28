@@ -84,6 +84,11 @@ describe('find index of element in an array', () => {
   });
 
   it('should return the index of the element in the array', () => {
-    
+    const arr = ['dog', 'mouse', 'car'];
+    const callback = (item) => item.startsWith('c');
+    const expected = [2];
+    const actual = findIndex(arr, callback);
+
+    expect(actual).toEqual(expected);
   });
 });
