@@ -1,4 +1,4 @@
-import { filterArray, mapArray } from '../index.js';
+import { filterArray, findIndex, mapArray } from '../index.js';
 
 describe('map an array return another', () => {
   it('should return "map" over original array and return a new array of same length and values', () => {
@@ -68,6 +68,17 @@ describe('filter an array', () => {
     const callback = (item) => item <= 10;
     const expected = [2, 4, 5, 8, 10];
     const actual = filterArray(arr, callback);
+
+    expect(actual).toEqual(expected);
+  });
+});
+
+describe('find index of element in an array', () => {
+  it('should return an array of filtered indices', () => {
+    const arr = [1, 2, 3, 4, 5];
+    const callback = (item) => item < 2;
+    const expected = [0];
+    const actual = findIndex(arr, callback);
 
     expect(actual).toEqual(expected);
   });

@@ -41,3 +41,18 @@ export const filterArray = (arr, callback) => {
   }
   return newArray;
 };
+
+export const findIndex = (arr, callback) => {
+  //we need to loop the array
+  for (let i = 0; i < arr.length; i++) {
+    //for each item in the array beginning at index 0
+    
+    const result = callback(arr[i]);
+    console.log(result);
+    //as soon result is true i will retun index of the item
+    if (result === true) {
+      return [i];
+    } else return -1;
+  
+  }
+};
