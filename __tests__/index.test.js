@@ -74,10 +74,46 @@ describe('filter an array', () => {
 });
 
 describe('find index of element in an array', () => {
-  it('should return an array of filtered indices', () => {
+  it('should return the index of the element in the array', () => {
     const arr = [1, 2, 3, 4, 5];
     const callback = (item) => item < 2;
     const expected = [0];
+    const actual = findIndex(arr, callback);
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return the index of the element in the array', () => {
+    const arr = ['dog', 'mouse', 'car'];
+    const callback = (item) => item.startsWith('c');
+    const expected = [2];
+    const actual = findIndex(arr, callback);
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return the index of the element in the array', () => {
+    const arr = ['dog', 'mouse', 'far'];
+    const callback = (item) => item.startsWith('c');
+    const expected = -1;
+    const actual = findIndex(arr, callback);
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return the index of the element in the array', () => {
+    const arr = [1, 2, 3, 4, 5];
+    const callback = (item) => item > 2;
+    const expected = [2];
+    const actual = findIndex(arr, callback);
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('should return the index of the element in the array', () => {
+    const arr = ['dog', 'mouse', 'far'];
+    const callback = (item) => item.endsWith('e');
+    const expected = [1];
     const actual = findIndex(arr, callback);
 
     expect(actual).toEqual(expected);
