@@ -129,4 +129,40 @@ describe('reduces an array to a final single value', () => {
 
     expect(actual).toEqual(expected);
   });
+
+  it('loops through an array and adds them, returning a single value', () => {
+    const arr = [1, 2, 3, 4, 5];
+    const callback = (acc, item) => acc * item;
+    const expected = 0;
+    const actual = reduceArray(arr, callback, 0);
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('loops through an array and adds them, returning a single value', () => {
+    const arr = ['a', 'b', 'c'];
+    const callback = (acc, item) => acc + item;
+    const expected = 'zabc';
+    const actual = reduceArray(arr, callback, 'z');
+
+    expect(actual).toEqual(expected);
+  });
+
+  it('loops through an array and adds them, returning a single value', () => {
+    const arr = ['apple', ' ', 'doesn\'t', ' ', 'fall ', 'far ', 'from ', 'the ', 'tree', '.'];
+    const callback = (acc, item) => acc + item;
+    const expected = 'The apple doesn\'t fall far from the tree.';
+    const actual = reduceArray(arr, callback, 'The ');
+
+    expect(actual).toEqual(expected);
+  });
+
+   it('loops through an array and adds them, returning a single value', () => {
+    const arr = ['apple', ' ', 'doesn\'t', ' ', 'fall ', 'far ', 'from ', 'the ', 'tree', '.'];
+    const callback = (acc, item) => acc + item;
+    const expected = 'apple doesn\'t fall far from the tree.';
+    const actual = reduceArray(arr, callback, '');
+
+    expect(actual).toEqual(expected);
+  });
 });
